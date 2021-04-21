@@ -1,0 +1,73 @@
+@import '../../variables';
+
+.footer-container {
+  background: $gray;
+  // height: 5rem;
+  // z-index: 100;
+
+  @media (max-width: $laptopMd){
+    height: auto;
+  }
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 100%;
+  height: 100%;
+  color: $primaryLightColor;
+  @media (max-width: $monitor){
+    padding: 1rem 14rem;
+  }
+  @media (max-width: $monitorMd){
+    padding: 1rem 8rem;
+  }
+  @media (max-width: $monitorSm){
+    padding: 1rem 6rem;
+  }
+  @media (max-width: $laptop){
+    padding: 1rem 2rem;
+  }
+  @media (max-width: $laptopMd){
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  div {
+    padding: 15px;
+  }
+
+  P {
+    margin: 0;
+    padding: 0;
+    color: $primaryLightColor
+  }
+  
+
+  .footer-link {
+    font-size: 1.20rem;
+    font-weight: 700;
+    color: $lightestGray;
+    padding-right: 15px;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+    @media (max-width: $phoneSm){
+      font-size: 1rem;
+    }
+  }
+  
+  .social-footer-links {
+    font-size: 2rem;
+    padding-right: 15px;
+    color: $lightestGray;
+    &:hover {
+      color: white;
+    }
+  }
+
+}
+
