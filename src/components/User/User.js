@@ -49,7 +49,9 @@ const User = (props) => {
     <div className="user-container" >
       <div className="portfoliocard">
         <div className="coverphoto"></div>
-        <div className="profile_picture"></div>
+        <div className="profile_picture">
+          <button className="set-photo">Set Photo</button>
+        </div>
         <div className="left_col">
           <div className="user_info">
             <h1>User Profile</h1>
