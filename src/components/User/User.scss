@@ -59,10 +59,15 @@ button:hover {
 		// padding:7px;
 		// border:4px solid rgba(255,255,255,1);
 
-		.set-photo {
-			position: relative;
-			top: 100%;
-			font-size: 14px;
+		.div-img {
+			height: 100%;
+			width: 100%;
+
+			.profile_img {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+			}
 		}
 	}
 

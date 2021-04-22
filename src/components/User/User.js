@@ -66,7 +66,7 @@ const User = (props) => {
           <input type="file" accept="image/*" onChange={handleImageUpload} ref={imageUploader}/>
         </div>
         <div className="profile_picture">
-          <div onClick={() => imageUploader.current.click()}>
+          <div className="div-img" onClick={() => imageUploader.current.click()}>
             <img ref={uploadedImage} className="profile_img" alt="user-profile-pic"/>
           </div>
         </div>
