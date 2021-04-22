@@ -6,7 +6,8 @@ import './User.scss'
 
 const User = (props) => {
   const {user} = props
-
+  const uploadedImage = React.useRef(null);
+  const imageUploader = React.useRef(null);
   const [editView, setEditView] = useState(false)
   const [userInfo, setUserInfo] = useState({
     first_name: user?.first_name,
@@ -14,6 +15,19 @@ const User = (props) => {
     email: user?.email, 
     username: user?.username
   })
+
+  const handleImageUpload = e => {
+    const [file] = e.target.files;
+    if (file) {
+      const reader = new FileReader();
+      const { current } = uploadedImage;
+      current.file = file;
+      reader.onload = e => {
+        current.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   useEffect(() => {
     if(user) {
@@ -48,9 +62,13 @@ const User = (props) => {
   return (
     <div className="user-container" >
       <div className="portfoliocard">
-        <div className="coverphoto"></div>
+        <div className="coverphoto">
+          <input type="file" accept="image/*" onChange={handleImageUpload} ref={imageUploader}/>
+        </div>
         <div className="profile_picture">
-          <button className="set-photo">Set Photo</button>
+          <div onClick={() => imageUploader.current.click()}>
+            <img ref={uploadedImage} className="profile_img" alt="user-profile-pic"/>
+          </div>
         </div>
         <div className="left_col">
           <div className="user_info">
