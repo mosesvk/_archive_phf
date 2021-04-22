@@ -1,6 +1,5 @@
 import React from "react";
-
-import "./Modal.css";
+import "./Modal.scss";
 
 export function ModalPadding({ children = null, className = "", ...props }) {
   return (

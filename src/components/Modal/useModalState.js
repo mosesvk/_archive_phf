@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from "react";
-import useClickOutside from "../common/useClickOutside";
+import useClickOutside from "./useClickOutside";
 
-export default function useModalState(
+export default function useModalState (
   isInitiallyOpen = false,
   onClickOutsideHandler
 ) {
