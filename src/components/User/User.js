@@ -66,7 +66,7 @@ const User = (props) => {
                   <input name="last_name" placeholder={user?.last_name} onChange={handleChange}></input>
                   <input name="email" placeholder={user?.email} onChange={handleChange}></input>
                   <input name="username" placeholder={user?.username} onChange={handleChange}></input>
-                  <button type="submit">Submit</button>
+                  <button className="submit" type="submit">Submit</button>
                 </form>
               ) : (
                 null

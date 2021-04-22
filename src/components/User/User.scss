@@ -5,6 +5,9 @@
 		// height: 100vh;
 	}
 }
+button:hover {
+	background-color: #aba3a3;
+}
 
 .portfoliocard {
 	position:relative;
@@ -104,7 +107,7 @@
 		}
 
 		.contact_information {
-			margin-top:20px;
+			// margin-top:20px;
 			// padding-left:30px;
 			list-style-type:none;
 			@media (max-width: $phone){
@@ -112,7 +115,7 @@
 			}
 
 			form {
-				margin: 55px 25px;
+				margin: 40px 20px;
 				@media (max-width: $phone){
 					margin: 0;
 					display: flex;
@@ -124,12 +127,11 @@
 					margin: 5px auto;
 				}
 
-				button {
-
+				.submit {
+					margin-top: 5px;
 					@media (max-width: $phone){
 						align-self: center;
 						width: 30%;
-						margin-top: 5px;
 					}
 				}
 			}
