@@ -77,8 +77,6 @@ const User = (props) => {
                 null
               ) : (
                 <>
-                  <li className="firstName">{user?.first_name}</li>
-                  <li className="lastName">{user?.last_name}</li>
                   <li className="mail">{user?.email}</li>
                   <li className="username">{user?.username}</li>
                 </>
