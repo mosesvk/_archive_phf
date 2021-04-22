@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, {useState, useEffect} from 'react'
 import {connect} from 'react-redux'
 import {updateUser} from '../../redux/userReducer'
@@ -67,7 +68,7 @@ const User = (props) => {
         </div>
         <div className="profile_picture">
           <div className="div-img" onClick={() => imageUploader.current.click()}>
-            <img ref={uploadedImage} onChange={handleImageUpload} className="profile_img" alt="user-profile-pic"/>
+            <img ref={uploadedImage} onChange={handleImageUpload} className="profile_img" onerror="this.style.display='none'"/>
           </div>
         </div>
         <div className="left_col">

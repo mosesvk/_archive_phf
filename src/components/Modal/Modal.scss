@@ -1,0 +1,83 @@
+.modal-container * {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.modal-container {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  pointer-events: none;
+  cursor: default;
+}
+
+.modal-container.open {
+  opacity: 1;
+  z-index: 10;
+}
+
+.modal-container,
+.modal-overlay,
+.modal-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.modal-overlay {
+  z-index: 1;
+
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-box {
+  z-index: 2;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #ffffff;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+}
+
+.modal-structure {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: 1rem;
+}
+
+header.modal-structure,
+footer.modal-structure {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+}
+
+.modal-structure + .modal-structure .modal-padding {
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.modal-padding {
+  padding: 10px 20px;
+}
+
+.modal-structure:first-child .modal-padding {
+  padding: 20px 20px 10px 20px;
+}
+
+.modal-structure:last-child .modal-padding {
+  padding: 10px 20px 20px 20px;
+}
+
+.modal-structure:first-child:last-child .modal-padding {
+  padding: 20px;
+}
