@@ -63,11 +63,11 @@ const User = (props) => {
     <div className="user-container" >
       <div className="portfoliocard">
         <div className="coverphoto">
-          <input type="file" accept="image/*" onChange={handleImageUpload} ref={imageUploader}/>
+          <input className="file" type="file" accept="image/*" onChange={handleImageUpload} ref={imageUploader}/>
         </div>
         <div className="profile_picture">
           <div className="div-img" onClick={() => imageUploader.current.click()}>
-            <img ref={uploadedImage} className="profile_img" alt="user-profile-pic"/>
+            <img ref={uploadedImage} onChange={handleImageUpload} className="profile_img" alt="user-profile-pic"/>
           </div>
         </div>
         <div className="left_col">

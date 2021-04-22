@@ -44,6 +44,10 @@ button:hover {
 		box-shadow:inset 0px 3px 20px rgba(255,255,255,0.3),
 					1px 0px 2px rgba(255,255,255,0.7);
 		z-index:99;
+
+		.file {
+			visibility: hidden;
+		}
 	}
 
 	.profile_picture {
