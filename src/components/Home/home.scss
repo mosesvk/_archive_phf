@@ -221,9 +221,9 @@
 .bottom-container {
   background: linear-gradient(to right, #3e40428f, #080808ad), url('https://media.pff.com/2019/12/USATSI_13755429.jpg?w=956&h=538') top fixed;
   background-size: cover;
-  height: 70vh;
+  height: 50vh;
 
-  @media (max-width: $laptopSm) {
+  @media (max-width: $laptop) {
     height: auto;
   }
 }

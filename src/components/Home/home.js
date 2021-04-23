@@ -47,7 +47,6 @@ const home = () => {
             <div className="bottom-wrap-info">
               <h2>TODAY I WILL DO WHAT OTHERS WON'T, SO TOMORROW I CAN ACCOMPOLISH WHAT OTHERS CAN'T</h2>
               <h3>- JERRY RICE</h3>
-              <br/>
             </div>
           </div>
         </div>
