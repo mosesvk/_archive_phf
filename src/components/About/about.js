@@ -25,11 +25,6 @@ const about = () => {
                           Powerhouse Fitness is a program designed to help high school and collegiate athletes refine their skills on the field through intensive workouts. 
                         </p>
                       </div>
-                      <ul className="list-style-one">
-                          <li>Lorem Ipsum is simply dummy tex</li>
-                          <li>Consectetur adipisicing elit</li>
-                          <li>Sed do eiusmod tempor incididunt</li>
-                      </ul>
                       <div className="btn-box">
                           <Link to="/contact" className="theme-btn btn-style-one">Contact Us</Link>
                       </div>
