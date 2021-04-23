@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './about.scss'
 
 const about = () => {
@@ -30,7 +31,7 @@ const about = () => {
                           <li>Sed do eiusmod tempor incididunt</li>
                       </ul>
                       <div className="btn-box">
-                          <a href="/contact" className="theme-btn btn-style-one">Contact Us</a>
+                          <Link to="/contact" className="theme-btn btn-style-one">Contact Us</Link>
                       </div>
                   </div>
               </div>
@@ -66,7 +67,7 @@ const about = () => {
                 </p>
               </div>
                 <div className="btn-box">
-                    <a href="/register" className="theme-btn btn-style-one">JOIN US</a>
+                    <Link to="/register" className="theme-btn btn-style-one">JOIN US</Link>
                 </div>
               </div>
             </div>
