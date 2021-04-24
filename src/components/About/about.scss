@@ -18,6 +18,9 @@
     background: linear-gradient(to right, #4292ee87, #474545f5), url("https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_2399,w_3600/https%3A%2F%2Flawlessrepublic.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2017%2F11%2F859958632-boise-state-v-byu.jpg.jpg") center fixed;
     background-size: cover;
     text-align: center;
+    @media (max-width: $phoneBg){
+      height: auto;
+    }
     .top-h1 {
       font-family: 'Black Ops One', 'Montserrat', sans-serif;
       color: white;
@@ -26,8 +29,9 @@
       @media (max-width: $laptopSm){
         font-size: 3.75rem;
       }
-      @media (max-width: $tablet){
+      @media (max-width: $phoneBg){
         font-size: 3rem;
+        padding: 25px 0;
       }
     }
   }
@@ -36,6 +40,9 @@
     background: linear-gradient(to left, #4292ee00, #474545f5), url("https://lawlessrepublic.com/wp-content/uploads/getty-images/2017/10/849332426-wisconsin-v-byu.jpg.jpg") center fixed;
     background-size: cover;
     text-align: center;
+    @media (max-width: $phoneBg){
+      height: auto;
+    }
     .top-h1 {
       font-family: 'Black Ops One', 'Montserrat', sans-serif;
       color: white;
@@ -44,8 +51,9 @@
       @media (max-width: $laptopSm){
         font-size: 3.75rem;
       }
-      @media (max-width: $tablet){
+      @media (max-width: $phoneBg){
         font-size: 3rem;
+        padding: 25px 0;
       }
     }
 
@@ -66,8 +74,10 @@
     .sec-title {
       position:relative;
       z-index: 1;
-      margin-bottom:60px;
-      // margin-bottom: 45px;
+      margin-bottom: 45px;
+      @media (max-width: $phoneBg){
+        margin: 0;
+      }
       .title {
         position: relative;
         display: block;
