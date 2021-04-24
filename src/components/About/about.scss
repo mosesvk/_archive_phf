@@ -5,7 +5,7 @@
   font-family: 'Montserrat', sans-serif;
   // padding: 50px 0 70px;
   @media (max-width: $tablet){
-    padding: 30px 0 60px;    
+    // padding: 30px 0 60px;    
   }
   .container {
     padding: 25px 0;
@@ -23,6 +23,12 @@
       color: white;
       font-size: 4.5rem;
       padding: 75px 0 0;
+      @media (max-width: $laptopSm){
+        font-size: 3.75rem;
+      }
+      @media (max-width: $tablet){
+        font-size: 3rem;
+      }
     }
   }
     .about-bottom {
@@ -35,6 +41,12 @@
       color: white;
       font-size: 4.5rem;
       padding: 75px 0 0;
+      @media (max-width: $laptopSm){
+        font-size: 3.75rem;
+      }
+      @media (max-width: $tablet){
+        font-size: 3rem;
+      }
     }
 
   }
@@ -68,11 +80,14 @@
       h2 {
         position: relative;
         display: block;
-        font-size:40px;
+        font-size: 40px;
         line-height: 1.28em;
         color: #222222;
         font-weight: 600;
         padding-bottom:18px;
+        @media (max-width: $phone){
+          font-size: 35px;
+        }
         :before{
           position:absolute;
           content:'';
@@ -82,14 +97,6 @@
           height:3px;
           background-color:#d1d2d6;
         }
-      }
-      .text{
-        position: relative;
-        font-size: 16px;
-        line-height: 26px;
-        color: #848484;
-        font-weight: 400;
-        margin-top: 35px;
       }
       .text-center{
         h2 {
@@ -106,6 +113,12 @@
       line-height: 26px;
       color: #848484;
       font-weight: 400;
+      @media (max-width: $laptopSm){
+        padding: 0 30px;
+      }
+      @media (max-width: $phoneBg){
+        padding: 0 10px;
+      }
     }
     .list-style-one {
       position:relative;
@@ -285,3 +298,6 @@
   //   background-color: #191e34;
   //   color: #fff;
   // }
+.content-column .inner-column{
+  padding: 0;
+}
