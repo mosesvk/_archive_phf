@@ -11,6 +11,7 @@ CREATE TABLE users (
 
 CREATE TABLE programs ( 
   program_id SERIAL PRIMARY KEY, 
+  program_name VARCHAR(50),
   start_date DATE, 
   end_date DATE, 
   price NUMERIC, 

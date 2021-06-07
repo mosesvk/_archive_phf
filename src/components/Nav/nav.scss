@@ -95,10 +95,14 @@
   .nav-map-link:visited {
     @media (max-width: $laptopMd){
       margin: 0;
-      padding: 15px 30px;
+      padding: 0px 30px;
     }
     @media (max-width: $phone){
       display: none;
+    }
+
+    h3 {
+      font-size: 1rem;
     }
   }
 
