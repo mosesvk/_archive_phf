@@ -1,15 +1,20 @@
 require('dotenv').config({path: __dirname + '/../.env'});
 const express = require('express');
 const session = require('express-session');
+const morgan = require('morgan')
 const user = require('./controllers/userCtrl')
 // const program = require('./controllers/programCtrl')
 const massive = require('massive')
 const path = require('path')
 
 
-const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
+const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, NODE_ENV} = process.env;
 
 const app = express();
+if (NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+
 app.use(express.json());
 //top level middleware converting json to javaScript. 
 app.use(session({
@@ -40,6 +45,18 @@ app.use(express.static(__dirname + '/../build'))
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../build/index.html'))
 })
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '/build')))
+
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+  )
+} else {
+  app.get('/', (req, res) => {
+    res.send('API is running....')
+  })
+}
 
 massive({
     connectionString: CONNECTION_STRING,
