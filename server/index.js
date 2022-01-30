@@ -1,6 +1,7 @@
 require('dotenv').config({path: __dirname + '/../.env'});
 const express = require('express');
 const session = require('express-session');
+const { Pool } = require('pg');
 const morgan = require('morgan')
 const user = require('./controllers/userCtrl')
 // const program = require('./controllers/programCtrl')
@@ -57,6 +58,11 @@ if (process.env.NODE_ENV === 'production') {
     res.send('API is running....')
   })
 }
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:<your admin password>@localhost:5432/<your db name>',
+  ssl: process.env.DATABASE_URL ? true : false
+})
 
 massive({
     connectionString: CONNECTION_STRING,
