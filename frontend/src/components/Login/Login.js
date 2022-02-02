@@ -20,7 +20,7 @@ const Login = (props) => {
   }, [user, push])
 
   const loginUser = () => {
-    axios.post('/auth/login', {
+    axios.post('/api/users', {
       username,
       password
     })
