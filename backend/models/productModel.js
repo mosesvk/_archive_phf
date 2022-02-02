@@ -19,23 +19,7 @@ const programSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    reviews: [reviewSchema],
-    rating: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    numReviews: {
-      type: String,
-      required: true,
-      default: 0,
-    },
     price: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    countInStock: {
       type: Number,
       required: true,
       default: 0,
