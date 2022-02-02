@@ -10,7 +10,6 @@ import {
   updateUser
 } from '../controllers/userCtrl.js';
 const router = express.Router();
-const router = express.Router();
 import { protect, admin } from '../middleware/authMiddleware.js';
 
 router.route('/').post(registerUser).get(protect, admin, getUsers)
