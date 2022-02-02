@@ -5,7 +5,6 @@ import users from './data/users.js'
 import programs from './data/programs.js';
 import User from './models/userModel.js'
 import Program from './models/programModel.js';
-import Order from './models/orderModel.js'
 import connectDB from './config/db.js';
 
 dotenv.config()
@@ -16,7 +15,6 @@ const importData = async() => {
   try {
     await User.deleteMany()
     await Program.deleteMany()
-    await Order.deleteMany()
 
     const createdUser = await User.insertMany(users)
 
@@ -40,7 +38,6 @@ const destroyData = async() => {
   try {
     await User.deleteMany()
     await Program.deleteMany()
-    await Order.deleteMany()
 
     console.log('Data Destroyed!'.red.inverse)
     process.exit()
