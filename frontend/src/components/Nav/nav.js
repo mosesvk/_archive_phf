@@ -94,10 +94,4 @@ const Nav = (props) => {
   )
 }
 
-const mapStateToProps = (stateRedux) => {
-  return {
-    user: stateRedux.userReducer.user
-  }
-};
-
-export default withRouter(connect(mapStateToProps, {updateUser})(Nav));
+export default Nav;
