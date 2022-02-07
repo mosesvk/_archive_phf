@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useSearchParams, useNavigate } from 'react-router-dom'
-import { login } from '../store/actions/userActions'
+import { login } from '../../store/actions/userActions'
 import './login.scss';
 
 const Login = (props) => {
