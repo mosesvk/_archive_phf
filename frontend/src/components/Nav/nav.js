@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
 import {
   FaFacebookSquare,
   FaYoutubeSquare,
@@ -12,11 +11,11 @@ import {
   FaUserAlt,
 } from 'react-icons/fa';
 import Sidebar from '../Sidebar/Sidebar';
-import { logout } from '../store/actions/userActions';
+import { logout } from '../../store/actions/userActions';
 import './nav.scss';
 
 const Nav = (props) => {
-  const { user, updateUser, history } = props;
+  const dispatch = useDispatch();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,15 +23,14 @@ const Nav = (props) => {
     setIsOpen(!isOpen);
   };
 
-  const dispatch = useDispatch();
-
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  console.log(userInfo)
 
   const logoutHandler = () => {
     dispatch(logout());
   };
-
 
   return (
     <>
@@ -53,13 +51,13 @@ const Nav = (props) => {
                 <FaLocationArrow />
                 <h3 className=''>Lehi, UT</h3>
               </a>
-              {user ? (
+              {userInfo ? (
                 <div className='nav-login-active'>
                   <Link className='nav-user-icon' to='/User'>
                     <FaUserAlt />
-                    <p>{user.username}</p>
+                    <p>{userInfo.username}</p>
                   </Link>
-                  <h3 onClick={logout} className='logout'>
+                  <h3 onClick={logoutHandler} className='logout'>
                     LOGOUT
                   </h3>
                 </div>
