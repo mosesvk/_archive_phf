@@ -11,9 +11,8 @@ import {
   FaBars,
   FaUserAlt
 } from 'react-icons/fa';
-import {connect} from 'react-redux'
 import Sidebar from '../Sidebar/Sidebar'
-import {updateUser} from '../../redux/userReducer'
+import { logout } from '../store/actions/userActions';
 import './nav.scss'
 
 const Nav = (props) => {
