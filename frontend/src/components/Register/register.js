@@ -4,10 +4,10 @@ import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 // import Message from '../components/Message';
 // import Loader from '../components/Loader';
-// import FormContainer from '../components/FormContainer';
+import FormContainer from '../UI/FormContainer';
 import { register } from '../../store/actions/userActions';
 
-import './register.scss'
+import './register.scss';
 
 const Register = (props) => {
   const [email, setEmail] = useState('');
@@ -36,45 +36,75 @@ const Register = (props) => {
     e.preventDefault();
     // DISPATCH REGISTER
     if (password !== confirmPassword) {
-      setMessage('Passwords do not match')
+      setMessage('Passwords do not match');
     } else {
-      dispatch(register(name, email, password))
+      dispatch(register(name, email, password));
     }
   };
 
-
   return (
-    <div className="register-container">
-      <div className="register-wrap">
-        <div className="box" id="sign-up">
-          <a className="back" href="/home"><span className="back-arrow">Back</span></a>
-          <div className="brand">
-            <div className="logo">
-              <div className="square"></div>
-              <div className="square"></div>
-              <div className="square"></div>
+    <FormContainer>
+      <div className='register-container'>
+        <div className='register-wrap'>
+          <div className='box' id='sign-up'>
+            <a className='back' href='/home'>
+              <span className='back-arrow'>Back</span>
+            </a>
+            <div className='brand'>
+              <div className='logo'>
+                <div className='square'></div>
+                <div className='square'></div>
+                <div className='square'></div>
+              </div>
+              <h2 className='title'>Register & Join</h2>
             </div>
-            <h2 className="title">Register & Join</h2>
-          </div>
-          <div className="form">
-            <form onSubmit={submitHandler}>
-              <div className="row">
-                <input type="text" name="name" placeholder="Name" onChange={(e) => setName(e.target.value)} value={name}/>
-              </div>
-              <input type="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email}/>
-              <input type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password}/>
-              <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}/>
-              {error ? <p className="errMsg">{error.message}</p> : null}
-              <div className="reg-sign-up">
-                <p>Already a member?</p><Link to="/login">Sign in</Link>
-              </div>
-              <button type="submit" name="submit">Sign up for free</button>
-            </form>
+            <div className='form'>
+              <form onSubmit={submitHandler}>
+                <div className='row'>
+                  <input
+                    type='text'
+                    name='name'
+                    placeholder='Name'
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                  />
+                </div>
+                <input
+                  type='email'
+                  name='email'
+                  placeholder='Email'
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
+                <input
+                  type='password'
+                  name='password'
+                  placeholder='Password'
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                />
+                <input
+                  type='password'
+                  name='confirmPassword'
+                  placeholder='Confirm Password'
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  value={confirmPassword}
+                />
+                {error ? <p className='errMsg'>{error.message}</p> : null}
+                <div className='reg-sign-up'>
+                  <p>Already a member?</p>
+                  <Link to='/login'>Sign in</Link>
+                </div>
+                <button type='submit' name='submit'>
+                  Sign up for free
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )
-}
+    </FormContainer>
+  );
+};
 
-export default Register
+export default Register;
