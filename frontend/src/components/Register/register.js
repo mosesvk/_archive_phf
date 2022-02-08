@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+// import Message from '../components/Message';
+// import Loader from '../components/Loader';
+// import FormContainer from '../components/FormContainer';
 import { register } from '../../store/actions/userActions';
+
+import './register.scss'
 
 const Register = (props) => {
   const [email, setEmail] = useState('');
@@ -39,7 +44,7 @@ const Register = (props) => {
 
 
   return (
-    <Form.Container className="register-container">
+    <div className="register-container">
       <div className="register-wrap">
         <div className="box" id="sign-up">
           <a className="back" href="/home"><span className="back-arrow">Back</span></a>
@@ -52,7 +57,7 @@ const Register = (props) => {
             <h2 className="title">Register & Join</h2>
           </div>
           <div className="form">
-            <Form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler}>
               <div className="row">
                 <input type="text" name="name" placeholder="Name" onChange={(e) => setName(e.target.value)} value={name}/>
               </div>
@@ -64,11 +69,11 @@ const Register = (props) => {
                 <p>Already a member?</p><Link to="/login">Sign in</Link>
               </div>
               <button type="submit" name="submit">Sign up for free</button>
-            </Form>
+            </form>
           </div>
         </div>
       </div>
-    </Form.Container>
+    </div>
   )
 }
 
