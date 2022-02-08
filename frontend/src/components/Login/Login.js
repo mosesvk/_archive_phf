@@ -5,6 +5,7 @@ import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { login } from '../../store/actions/userActions';
 import Message from '../UI/Message';
 import Loader from '../UI/Loader';
+import FormContainer from '../UI/FormContainer';
 import './login.scss';
 
 const Login = (props) => {
@@ -35,7 +36,6 @@ const Login = (props) => {
 
   return (
     <>
-    {loading && <Loader />}
     <div className='login-container'>
       <div className='login-wrap'>
         <div className='box' id='sign-up'>
@@ -45,6 +45,7 @@ const Login = (props) => {
           <div className='brand'>
             <h2 className='title'>Sign In</h2>
           </div>
+          {loading && <Loader />}
           {error && <Message variant='danger'>{error}</Message>}
           <div className='form'>
             <input
