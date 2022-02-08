@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useSearchParams, useNavigate } from 'react-router-dom'
-import { login } from '../../store/actions/userActions'
+import { useDispatch, useSelector } from 'react-redux';
+import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
+import { login } from '../../store/actions/userActions';
+import Message from '../UI/Message';
+import Loader from '../UI/Loader';
 import './login.scss';
 
 const Login = (props) => {
@@ -20,10 +23,10 @@ const Login = (props) => {
 
   useEffect(() => {
     if (userInfo) {
-      console.log(userInfo)
-      navigate(redirect)
+      console.log(userInfo);
+      navigate(redirect);
     }
-  }, [navigate, userInfo, redirect])
+  }, [navigate, userInfo, redirect]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -31,6 +34,8 @@ const Login = (props) => {
   };
 
   return (
+    <>
+    {loading && <Loader />}
     <div className='login-container'>
       <div className='login-wrap'>
         <div className='box' id='sign-up'>
@@ -40,6 +45,7 @@ const Login = (props) => {
           <div className='brand'>
             <h2 className='title'>Sign In</h2>
           </div>
+          {error && <Message variant='danger'>{error}</Message>}
           <div className='form'>
             <input
               placeholder='Username'
@@ -61,8 +67,8 @@ const Login = (props) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
-export default Login
-
+export default Login;
