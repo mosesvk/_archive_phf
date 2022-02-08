@@ -16,13 +16,15 @@ const Login = (props) => {
   const [searchParams] = useSearchParams();
   const redirect = [...searchParams].length > 0 ? [...searchParams][0][1] : '/';
 
+  console.log(redirect)
   const navigate = useNavigate();
 
   useEffect(() => {
     if (userInfo) {
-      navigate(redirect);
+      console.log(userInfo)
+      navigate(redirect)
     }
-  }, [navigate, userInfo, redirect]);
+  }, [navigate, userInfo, redirect])
 
   const submitHandler = (e) => {
     e.preventDefault();

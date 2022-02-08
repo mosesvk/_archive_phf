@@ -27,7 +27,7 @@ app.use('/api/users', userRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5500;
+const PORT = process.env.PORT || 5555;
 
 app.listen(
   PORT,
