@@ -39,13 +39,13 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
 
+    // console.log(email, password)
+    
     const { data } = await axios.post(
       '/api/users/login',
       { email, password },
       config
     );
-
-    console.log(data)
 
     dispatch({
       type: USER_LOGIN_SUCCESS,

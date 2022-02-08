@@ -39,7 +39,7 @@ const Register = (props) => {
 
 
   return (
-    <div className="register-container">
+    <Form.Container className="register-container">
       <div className="register-wrap">
         <div className="box" id="sign-up">
           <a className="back" href="/home"><span className="back-arrow">Back</span></a>
@@ -52,7 +52,7 @@ const Register = (props) => {
             <h2 className="title">Register & Join</h2>
           </div>
           <div className="form">
-            <form onSubmit={submitHandler}>
+            <Form onSubmit={submitHandler}>
               <div className="row">
                 <input type="text" name="name" placeholder="Name" onChange={(e) => setName(e.target.value)} value={name}/>
               </div>
@@ -64,11 +64,11 @@ const Register = (props) => {
                 <p>Already a member?</p><Link to="/login">Sign in</Link>
               </div>
               <button type="submit" name="submit">Sign up for free</button>
-            </form>
+            </Form>
           </div>
         </div>
       </div>
-    </div>
+    </Form.Container>
   )
 }
 

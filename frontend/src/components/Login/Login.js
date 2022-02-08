@@ -16,7 +16,6 @@ const Login = (props) => {
   const [searchParams] = useSearchParams();
   const redirect = [...searchParams].length > 0 ? [...searchParams][0][1] : '/';
 
-  console.log(redirect)
   const navigate = useNavigate();
 
   useEffect(() => {
