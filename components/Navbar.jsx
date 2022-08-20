@@ -19,8 +19,8 @@ const Navbar = () => {
   return (
     <>
       <Sidebar />
-      <nav>
-        <div className='nav-container'>
+      <nav className='block px-8 py-4 bg-gray-600 text-white h-24 sticky top-0 z-100 box-content'>
+        <div className='flex justify-between items-center h-full xl:px-56 lg:px-32 px-12'>
           <a className='nav-logo' href='/'>
             <h1>POWERHOUSE FITNESS</h1>
           </a>
