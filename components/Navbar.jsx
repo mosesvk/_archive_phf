@@ -21,8 +21,8 @@ const Navbar = () => {
       <Sidebar />
       <nav className='block px-8 py-4 bg-gray-600 text-white h-24 sticky top-0 z-100 box-content'>
         <div className='flex justify-between items-center h-full xl:px-56 lg:px-32 px-12'>
-          <a className='nav-logo' href='/'>
-            <h1>POWERHOUSE FITNESS</h1>
+          <a className='text-5xl font-extrabold font-["mainLogo"] max-w-sm text-center text-slate-50 hover:decoration-0' href='/'>
+            <h1 className='text-4xl md:text-2xl sm:text-lg'>POWERHOUSE FITNESS</h1>
           </a>
           <div className='nav-info-wrap'>
             <div className='nav-social-wrap'>
@@ -104,8 +104,8 @@ const Navbar = () => {
               </Link>
               {/* <Link className="links" to="/register">REGISTER</Link> */}
             </div>
-            <div className='nav-bars'>
-              <FaBars className='bars-icon' onClick={toggle} />
+            <div className='hidden xl:flex xl:justify-end xl:text-4xl xl:text-white'>
+              <FaBars className='cursor-pointer' onClick={toggle} />
             </div>
           </div>
         </div>
